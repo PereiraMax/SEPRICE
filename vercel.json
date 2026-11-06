@@ -1,7 +1,8 @@
 {
-  "functions": { "api/*.php": { "runtime": "vercel-php@0.7.3" } },
+  "regions": ["hnd1"],
+  "functions": { "api/index.php": { "runtime": "vercel-php@0.7.3", "includeFiles": "app/**" } },
   "rewrites": [
-    { "source": "/", "destination": "/api/index.php" },
-    { "source": "/:page.php", "destination": "/api/:page.php" }
+    { "source": "/", "destination": "/api/index.php?p=index" },
+    { "source": "/:page.php", "destination": "/api/index.php?p=:page" }
   ]
 }
